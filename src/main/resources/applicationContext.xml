@@ -17,13 +17,15 @@
     	</constructor-arg>	
     </bean>
     
-<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-    <constructor-arg>
-    	<ref bean="dataSource"/>
-    </constructor-arg>
+	<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+    	<constructor-arg>
+    		<ref bean="dataSource"/>
+   		</constructor-arg>
     </bean>
     <bean id="namedParamGuestMessageDao" class="tommy.spring.guestbook.dao.NamedParamGuestMessageDao">
-    <constructor-arg><ref bean="simpleJdbcInsert"/></constructor-arg>
+   		<constructor-arg>
+   			<ref bean="simpleJdbcInsert"/>
+   		</constructor-arg>
     <property name="template" ref="namedParameterJdbcTemplate" />
     	
     </bean>
